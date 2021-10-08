@@ -1,5 +1,6 @@
-###Practical task for EPAM Java Web Development course
+# Practical task for EPAM Java Web Development course
+## XML parser
 
-Andrey Shipulya
 
-XML parser
+### Andrey Shipulya
+
