@@ -1,4 +1,4 @@
-package com.akshipulya.xmlParser.creater;
+package com.akshipulya.xmlParser.xmlHandler.creator;
 
 import com.akshipulya.xmlParser.model.Park;
 

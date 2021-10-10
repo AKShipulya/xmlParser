@@ -1,9 +1,8 @@
-package com.akshipulya.xmlParser.parser;
+package com.akshipulya.xmlParser.xmlHandler.parser;
 
 import com.akshipulya.xmlParser.model.Bush;
 import com.akshipulya.xmlParser.model.Plant;
 import com.akshipulya.xmlParser.model.Tree;
-import com.sun.xml.internal.bind.v2.TODO;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -15,22 +14,17 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Stream;
 
-public class XmlFileParser implements Parser<Plant>{
-
+public class XmlFileParser implements Parser<Plant> {
 
     @Override
     public List<Plant> parse(String pathToFile) {
+
         List<Plant> plants = new ArrayList<>();
 
         try {
             DocumentBuilder documentBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
             Document document = documentBuilder.parse(pathToFile);
-
-            // TODO: 10/10/21 обработать выводы сообщений на консоль
-            System.out.println("List of plants:");
-            System.out.println();
 
             List<Plant> trees = getTrees(document);
             List<Plant> bushes = getBushes(document);
@@ -38,9 +32,8 @@ public class XmlFileParser implements Parser<Plant>{
             plants.addAll(trees);
             plants.addAll(bushes);
 
-        } catch (ParserConfigurationException | SAXException | IOException ex) {
-            //TODO soobjenie
-            throw new RuntimeException("", ex);
+        } catch (ParserConfigurationException | SAXException | IOException e) {
+            throw new RuntimeException("XML parser error, please check provided file or/and data", e);
         }
 
         return plants;
@@ -54,7 +47,7 @@ public class XmlFileParser implements Parser<Plant>{
             Node item = treesNodes.item(i);
             String name = getAttributeValueByName(item, "name");
             String height = getAttributeValueByName(item, "height");
-            Plant plant = new Tree(Double.parseDouble(height),name);
+            Plant plant = new Tree(Double.parseDouble(height), name);
             trees.add(plant);
         }
         return trees;
@@ -67,7 +60,7 @@ public class XmlFileParser implements Parser<Plant>{
             Node item = treesNodes.item(i);
             String name = getAttributeValueByName(item, "name");
             String height = getAttributeValueByName(item, "height");
-            Plant plant = new Bush(Double.parseDouble(height),name);
+            Plant plant = new Bush(Double.parseDouble(height), name);
             bushes.add(plant);
         }
         return bushes;

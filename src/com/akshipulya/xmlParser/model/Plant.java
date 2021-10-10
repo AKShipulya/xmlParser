@@ -34,10 +34,4 @@ public abstract class Plant {
         return (int) (temp ^ (temp >>> 32));
     }
 
-    @Override
-    public String toString() {
-        return "Plant{" +
-                "height=" + height +
-                '}';
-    }
 }

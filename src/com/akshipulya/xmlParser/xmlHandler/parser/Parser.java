@@ -1,4 +1,4 @@
-package com.akshipulya.xmlParser.parser;
+package com.akshipulya.xmlParser.xmlHandler.parser;
 
 import java.util.List;
 

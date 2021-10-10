@@ -1,4 +1,4 @@
-package com.akshipulya.xmlParser.creater;
+package com.akshipulya.xmlParser.xmlHandler.creator;
 
 import com.akshipulya.xmlParser.model.Park;
 import org.w3c.dom.Document;
@@ -13,6 +13,8 @@ import javax.xml.transform.stream.StreamResult;
 import java.io.File;
 
 public class XmlFileCreator implements Creator {
+
+    private static final String PATH_FOR_FILE_SAVE = "resources/park.xml";
 
     @Override
     public void create(Park park) {
@@ -38,13 +40,14 @@ public class XmlFileCreator implements Creator {
             transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
             transformer.setOutputProperty(OutputKeys.INDENT, "yes");
             DOMSource domSource = new DOMSource(document);
-            StreamResult streamResult = new StreamResult(new File("resources/park.xml"));
+            StreamResult streamResult = new StreamResult(new File(PATH_FOR_FILE_SAVE));
 
-            transformer.transform(domSource, streamResult);;
+            transformer.transform(domSource, streamResult);
 
+            System.out.println("XML file was created!");
 
         } catch (ParserConfigurationException | TransformerException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException("XML creator error, please check provided data", e);
         }
     }
 }

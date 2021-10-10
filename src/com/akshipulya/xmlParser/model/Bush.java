@@ -11,6 +11,6 @@ public class Bush extends Plant {
         return "Bush{" +
                 "height=" + getHeight() +
                 ", name='" + getName() + '\'' +
-                '}';
+                '}' + "\n";
     }
 }
