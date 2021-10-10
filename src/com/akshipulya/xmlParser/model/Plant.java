@@ -1,19 +1,21 @@
 package com.akshipulya.xmlParser.model;
 
-public class Plant {
+public abstract class Plant {
 
-    private double height;
+    private final double height;
+    private final String name;
 
-    public Plant(double height) {
+    public Plant(double height, String name) {
         this.height = height;
+        this.name = name;
     }
 
     public double getHeight() {
         return height;
     }
 
-    public void setHeight(double height) {
-        this.height = height;
+    public String getName() {
+        return name;
     }
 
     @Override

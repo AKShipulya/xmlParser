@@ -1,7 +1,9 @@
 package com.akshipulya.xmlParser.parser;
 
+import java.util.List;
+
 public interface Parser<T> {
 
-    void parse(String pathToFile);
+    List<T> parse(String pathToFile);
 
 }

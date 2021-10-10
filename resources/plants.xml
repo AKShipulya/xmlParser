@@ -1,45 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PlantsCatalogue>
-    <Plant>
-        <Tree>
-            <Type>Tree1</Type>
-            <Name>TreeA</Name>
-            <Height>2.2</Height>
-        </Tree>
-    </Plant>
-    <Plant>
-        <Tree>
-            <Type>Tree2</Type>
-            <Name>TreeB</Name>
-            <Height>4.5</Height>
-        </Tree>
-    </Plant>
-    <Plant>
-        <Tree>
-            <Type>Tree3</Type>
-            <Name>TreeC</Name>
-            <Height>8.1</Height>
-        </Tree>
-    </Plant>
-    <Plant>
-        <Bush>
-           <Type>Bush1</Type>
-            <Name>BushA</Name>
-            <Height>0.5</Height>
-        </Bush>
-    </Plant>
-    <Plant>
-        <Bush>
-            <Type>Bush2</Type>
-            <Name>BushB</Name>
-            <Height>1.1</Height>
-        </Bush>
-    </Plant>
-    <Plant>
-        <Bush>
-            <Type>Bush3</Type>
-            <Name>BushC</Name>
-            <Height>0.8</Height>
-        </Bush>
-    </Plant>
+   <Plants>
+       <Trees>
+            <Tree name="Bereza" height="10"/>
+            <Tree name="Dub" height="8.3"/>
+            <Tree name="Ryabina" height="11.2"/>
+       </Trees>
+       <Bushes>
+           <Bush name="Smorodina" height="3.1"/>
+           <Bush name="Golubika" height="2.5"/>
+           <Bush name="Malina" height="0.8"/>
+       </Bushes>
+   </Plants>
 </PlantsCatalogue>
